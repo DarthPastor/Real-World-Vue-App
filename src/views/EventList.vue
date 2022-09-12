@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import EventCard from "@/components/EventCard.vue";
-import axios from 'axios';
+import EventService from '@/services/EventService.js';
 
 // Registering 'EventCard' as child component of "HomeView" 
 export default {
@@ -22,8 +22,7 @@ export default {
 		}
 	},
 	created() {
-		axios
-			.get('https://raw.githubusercontent.com/DarthPastor/pseudo-server/main/events.json')
+		EventService.getEvents()
 			.then(response => {
 				this.events = response.data.events
 			})

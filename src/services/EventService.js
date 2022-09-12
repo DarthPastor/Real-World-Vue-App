@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-	baseURL: 'https://raw.githubusercontent.com/DarthPastor/pseudo-server/main/events.json',
+	baseURL: 'https://raw.githubusercontent.com/DarthPastor/pseudo-server/main',
 	withCredentials: false,
 	headers: {
 		Accept: 'application/json',
@@ -11,6 +11,6 @@ const apiClient = axios.create({
 
 export default {
 	getEvents() {
-		return apiClient.get('/events')
+		return apiClient.get('/events.json')
 	}
 }
