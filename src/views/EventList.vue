@@ -10,7 +10,7 @@
 import EventCard from "@/components/EventCard.vue";
 import EventService from '@/services/EventService.js';
 
-// Registering 'EventCard' as child component of "HomeView" 
+// Registering 'EventCard' as child component of "EventList" 
 export default {
 	name: "EventList",
 	components: {
@@ -18,13 +18,13 @@ export default {
 	},
 	data() {
 		return {
-			events: []
+			events: null
 		}
 	},
 	created() {
 		EventService.getEvents()
 			.then(response => {
-				this.events = response.data.events
+				this.events = response.data
 			})
 			.catch(error => {
 				console.log(error)
