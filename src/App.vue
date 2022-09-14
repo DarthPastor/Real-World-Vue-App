@@ -1,8 +1,8 @@
 <template>
 	<div id="app">
 		<div id="nav">
-			<router-link :to="{ name: 'EventList' }">Events</router-link> |
-			<router-link :to="{ name: 'AboutPage' }">About</router-link>
+			<router-link class="menu-item" :to="{ name: 'EventList' }">Events</router-link> |
+			<router-link class="menu-item" :to="{ name: 'AboutPage' }">About</router-link>
 		</div>
 		<router-view />
 	</div>
@@ -32,5 +32,13 @@
 
 	h4 {
 		font-size: 20px;
+	}
+	.menu-item {
+		font-weight: bold;
+		color: black;
+	}
+	.menu-item:hover {
+		font-weight: bold;
+		color: #42b983;
 	}
 </style>
